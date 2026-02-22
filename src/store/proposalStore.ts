@@ -24,8 +24,6 @@ import {
   Attachment,
   ProposalMetadata,
   Currency,
-  EquipmentType,
-  MaterialOfConstruction,
 } from '../types/proposal.types';
 
 // ============================================
@@ -264,7 +262,7 @@ export const useProposalStore = create<ProposalWizardState & ProposalWizardActio
         }));
       },
 
-      deleteProposal: async (proposalId: string) => {
+      deleteProposal: async (_proposalId: string) => {
         // In real app, delete from API
         set({ currentProposal: null, completedSteps: [] });
       },

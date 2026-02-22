@@ -138,6 +138,10 @@ export interface EquipmentItem {
   lineItemNo: number;
   tagNumber: string;
   equipmentType: EquipmentType;
+  type?: string; // For component UI
+  model?: string; // Equipment model
+  capacity?: string; // Capacity specification
+  motorHP?: number; // Motor horsepower
   description: string;
   quantity: number;
   
@@ -177,6 +181,7 @@ export interface EquipmentItem {
 
 export interface TechnicalSpecifications {
   equipment: EquipmentItem[];
+  scopeOfSupply?: string[]; // Items in scope
   standards: string[]; // ISO, API, ASME, etc.
   applicableCodes: string[];
   testingRequirements: string[];
@@ -185,7 +190,8 @@ export interface TechnicalSpecifications {
   paintingSpecification?: string;
   inspectionRequired: boolean;
   thirdPartyInspection?: string;
-  
+  warrantyPeriod?: string; // Warranty duration
+
   // Operational conditions
   ambientTemperature: {
     min: number;

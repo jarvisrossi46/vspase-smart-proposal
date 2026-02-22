@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useProposalStore, ProposalStep } from './store/proposalStore';
+import { useProposalStore } from './store/proposalStore';
+import { ProposalStep } from './types/proposal.types';
 import { Stepper } from './components/Stepper';
 import { ClientDetailsStep } from './components/steps/ClientDetailsStep';
 import { TechnicalSpecsStep } from './components/steps/TechnicalSpecsStep';

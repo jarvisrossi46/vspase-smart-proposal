@@ -1,5 +1,6 @@
 import React from 'react';
-import { useProposalStore, ProposalStep } from '../../store/proposalStore';
+import { useProposalStore } from '@/store/proposalStore';
+import { ProposalStep } from '@/types/proposal.types';
 
 /**
  * Stepper Component

@@ -1,4 +1,4 @@
-<!-- VS PASE Proposal Template - Generated for Smart Proposal Management System -->
+<!-- VS PASE Comprehensive Proposal Template - 10-12 Pages -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +11,8 @@
         
         body {
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
         }
         
         @media print {
@@ -24,175 +26,214 @@
                 break-after: page;
                 width: 210mm;
                 min-height: 297mm;
-                padding: 20mm;
+                padding: 15mm 20mm;
                 box-sizing: border-box;
+                page-break-after: always;
+            }
+            .page:last-child {
+                page-break-after: auto;
             }
             table { 
                 break-inside: avoid; 
-            }
-            .no-print {
-                display: none;
             }
         }
         
         .page {
             width: 210mm;
             min-height: 297mm;
-            padding: 20mm;
+            padding: 15mm 20mm;
             box-sizing: border-box;
             margin: 0 auto;
             background: white;
+            position: relative;
         }
         
-        table.zebra tr:nth-child(even) {
-            background-color: #f3f4f6;
-        }
+        .border-blue-primary { border-color: #1e40af; }
+        .bg-blue-primary { background-color: #1e40af; }
+        .text-blue-primary { color: #1e40af; }
+        .bg-light-blue { background-color: #dbeafe; }
         
-        .border-blue-primary {
-            border-color: #1e40af;
-        }
-        
-        .bg-blue-primary {
-            background-color: #1e40af;
-        }
-        
-        .text-blue-primary {
+        .logo-text {
+            font-size: 28px;
+            font-weight: 800;
             color: #1e40af;
+            letter-spacing: 1px;
+        }
+        
+        .logo-subtitle {
+            font-size: 11px;
+            color: #6b7280;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e40af;
+            border-bottom: 3px solid #1e40af;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 10mm;
+            right: 20mm;
+            font-size: 10px;
+            color: #9ca3af;
         }
     </style>
 </head>
 <body class="bg-gray-200">
 
-    <!-- Page 1 - Cover Page -->
-    <div class="page flex flex-col justify-between">
-        <div>
-            <!-- Logo Placeholder -->
-            <div id="logo" class="w-64 h-24 bg-gray-100 border-2 border-dashed border-gray-300 flex items-center justify-center mb-12">
-                <span class="text-gray-400 font-semibold">VS PASE Logo</span>
-            </div>
-            
-            <div class="mt-16">
-                <h1 class="text-4xl font-bold text-blue-primary mb-4">TECHNO-COMMERCIAL OFFER</h1>
-                <div class="w-32 h-1 bg-blue-primary mb-8"></div>
+    <!-- PAGE 1 - COVER PAGE -->
+    <div class="page flex flex-col">
+        <div class="mb-8">
+            <div class="logo-text">VS PASE</div>
+            <div class="logo-subtitle">Projects & System Engineers</div>
+            <div class="text-xs text-gray-500 mt-1">A-62, Flatted Factory Complex, Okhla Phase-III, New Delhi - 110020</div>
+        </div>
+        
+        <div class="flex-grow flex flex-col justify-center items-center text-center my-12">
+            <div class="w-full">
+                <div class="text-sm text-gray-500 uppercase tracking-widest mb-4">Techno-Commercial Proposal</div>
+                <h1 class="text-4xl font-bold text-blue-primary mb-6">TECHNO-COMMERCIAL<br>OFFER</h1>
+                <div class="w-40 h-1 bg-blue-primary mx-auto mb-8"></div>
                 
-                <div class="text-2xl font-semibold text-gray-700 mb-2">Offer No: {{offerNumber}}</div>
-                <div class="text-lg text-gray-500 mb-8">Date: {{offerDate}}</div>
+                <div class="text-2xl font-semibold text-gray-800 mb-2">Offer No: {{offerNumber}}</div>
+                <div class="text-lg text-gray-500 mb-12">Date: {{offerDate}}</div>
                 
-                <div class="mt-12">
-                    <p class="text-sm text-gray-500 uppercase tracking-wide mb-2">Prepared for</p>
-                    <h2 class="text-3xl font-bold text-gray-800">{{clientName}}</h2>
-                    <p class="text-lg text-gray-600 mt-2">{{clientAddress.city}}, {{clientAddress.country}}</p>
+                <div class="mt-8 border-t-2 border-gray-200 pt-8 max-w-md mx-auto">
+                    <p class="text-sm text-gray-500 uppercase tracking-wide mb-3">Prepared for</p>
+                    <h2 class="text-2xl font-bold text-gray-800">{{clientName}}</h2>
+                    <p class="text-base text-gray-600 mt-2">{{projectName}}</p>
+                    <p class="text-sm text-gray-500 mt-1">Enquiry Ref: {{enquiryReference}}</p>
                 </div>
             </div>
         </div>
         
-        <div class="border-t-2 border-blue-primary pt-6">
+        <div class="border-t-2 border-blue-primary pt-4">
             <div class="flex justify-between items-center">
-                <div>
-                    <h3 class="font-bold text-blue-primary text-lg">VS PROJECTS & SYSTEM ENGINEERS</h3>
-                    <p class="text-sm text-gray-600">A-62, Flatted Factory Complex, Okhla Phase-III</p>
-                    <p class="text-sm text-gray-600">New Delhi - 110020, India</p>
+                <div class="text-sm">
+                    <p class="font-semibold text-blue-primary">VS Projects & System Engineers</p>
+                    <p class="text-gray-600">ISO 9001:2008 Certified Company</p>
                 </div>
-                <div class="text-right text-sm text-gray-500">
-                    <p>www.vspase.com</p>
-                    <p>info@vspase.com</p>
+                <div class="text-right text-xs text-gray-500">
+                    <p>www.vspase.com | info@vspase.com</p>
+                    <p>Tel: +91-11-26944429, 26944742</p>
                 </div>
             </div>
         </div>
+        <div class="page-number">Page 1 of 12</div>
     </div>
 
-    <!-- Page 2 - Covering Letter -->
+    <!-- PAGE 2 - COVERING LETTER -->
     <div class="page">
-        <div class="border-b-2 border-blue-primary pb-4 mb-8">
-            <div class="flex justify-between items-center">
-                <div id="logo-small" class="w-32 h-12 bg-gray-100 border border-dashed border-gray-300 flex items-center justify-center">
-                    <span class="text-xs text-gray-400">Logo</span>
-                </div>
-                <div class="text-right text-sm text-gray-600">
-                    <p>Offer No: {{offerNumber}}</p>
-                    <p>Date: {{offerDate}}</p>
-                </div>
+        <div class="border-b-2 border-blue-primary pb-3 mb-6 flex justify-between items-center">
+            <div><span class="logo-text text-lg">VS PASE</span></div>
+            <div class="text-right text-xs text-gray-600">
+                <p>Offer No: {{offerNumber}}</p>
+                <p>Date: {{offerDate}}</p>
             </div>
         </div>
         
-        <div class="mb-8">
+        <h2 class="section-title">Covering Letter</h2>
+        
+        <div class="mb-6">
             <p class="font-semibold text-gray-800">To,</p>
+            <p class="text-gray-800 font-medium">{{contactPerson}}</p>
             <p class="text-gray-800">{{clientName}}</p>
             <p class="text-gray-600">{{clientAddress.line1}}</p>
-            <p class="text-gray-600">{{clientAddress.line2}}</p>
             <p class="text-gray-600">{{clientAddress.city}} - {{clientAddress.pincode}}</p>
             <p class="text-gray-600">{{clientAddress.state}}, {{clientAddress.country}}</p>
         </div>
         
-        <div class="mb-6">
-            <p class="text-sm text-gray-500 mb-1">Subject:</p>
-            <p class="font-bold text-blue-primary text-lg">{{subject.subjectLine}}</p>
+        <div class="mb-6 bg-light-blue p-4 rounded">
+            <p class="text-sm text-gray-600 mb-1">Subject:</p>
+            <p class="font-bold text-blue-primary">{{subject.subjectLine}}</p>
         </div>
         
-        <div class="mb-8">
-            <p class="text-gray-600 mb-4">Dear Sir/Madam,</p>
-            <p class="text-gray-700 leading-relaxed mb-4">{{openingText}}</p>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                We are pleased to submit our techno-commercial proposal for your kind consideration. 
-                This offer includes detailed technical specifications, commercial terms, and all relevant 
-                information regarding the proposed equipment and services.
-            </p>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                We assure you of our best services and quality workmanship. All equipment will be 
-                manufactured as per international standards and thoroughly tested before dispatch.
-            </p>
-            <p class="text-gray-700 leading-relaxed">
-                We look forward to receiving your valuable order and establishing a long-term 
-                business relationship with your esteemed organization.
-            </p>
+        <div class="text-gray-700 leading-relaxed space-y-4 text-justify">
+            <p>Dear Sir,</p>
+            <p>We thank you for your enquiry and the interest shown in our products. We are pleased to submit our Techno-Commercial Offer.</p>
+            <p>This proposal includes detailed technical specifications, commercial terms, delivery schedule, and all relevant information regarding the proposed equipment.</p>
+            <p>We assure you of our best services, quality workmanship, and timely delivery.</p>
         </div>
         
-        <div class="mt-16">
+        <div class="mt-12">
             <p class="text-gray-700 mb-8">Thanking you,</p>
-            <p class="font-bold text-gray-800">{{closing.signatoryName}}</p>
+            <p class="font-bold text-gray-800">Yours faithfully,</p>
+            <p class="text-gray-600 mt-8">For <strong>VS Projects & System Engineers</strong></p>
+            <p class="font-bold text-gray-800 mt-6">{{closing.signatoryName}}</p>
             <p class="text-gray-600">{{closing.signatoryDesignation}}</p>
-            <p class="text-blue-primary font-semibold mt-2">VS Projects & System Engineers</p>
         </div>
-        
-        <div class="border-t border-gray-200 pt-4 mt-auto">
-            <p class="text-xs text-gray-400 text-center">VS PASE | A-62, Flatted Factory Complex, Okhla Phase-III, New Delhi - 110020</p>
-        </div>
+        <div class="page-number">Page 2 of 12</div>
     </div>
 
-    <!-- Page 3 - Company Profile -->
+    <!-- PAGE 3 - INDEX -->
     <div class="page">
-        <div class="border-b-2 border-blue-primary pb-4 mb-8">
-            <h2 class="text-2xl font-bold text-blue-primary">Company Profile</h2>
+        <div class="border-b-2 border-blue-primary pb-3 mb-6 flex justify-between items-center">
+            <div><span class="logo-text text-lg">VS PASE</span></div>
+            <div class="text-right text-xs text-gray-600"><p>Offer No: {{offerNumber}}</p></div>
         </div>
         
-        <div class="mb-8">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">About VS PASE</h3>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                VS Projects & System Engineers (VS PASE) is a leading manufacturer of industrial 
-                processing equipment with over 500 installations globally across 35 countries. 
-                Established with a vision to provide world-class engineering solutions, we have 
-                grown to become a trusted partner for industries worldwide.
-            </p>
-            <p class="text-gray-700 leading-relaxed mb-4">
-                Our commitment to quality, innovation, and customer satisfaction has earned us 
-                ISO 9001:2008 certification, ensuring that every product meets the highest 
-                international standards.
+        <h2 class="section-title">Index</h2>
+        
+        <table class="w-full">
+            <thead>
+                <tr class="bg-blue-primary text-white">
+                    <th class="p-3 text-left w-24">S.No.</th>
+                    <th class="p-3 text-left">Description</th>
+                    <th class="p-3 text-right w-24">Page</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-gray-200"><td class="p-3">1.</td><td class="p-3">Cover Page</td><td class="p-3 text-right">1</td></tr>
+                <tr class="border-b border-gray-200 bg-gray-50"><td class="p-3">2.</td><td class="p-3">Covering Letter</td><td class="p-3 text-right">2</td></tr>
+                <tr class="border-b border-gray-200"><td class="p-3">3.</td><td class="p-3">Index</td><td class="p-3 text-right">3</td></tr>
+                <tr class="border-b border-gray-200 bg-gray-50"><td class="p-3">4.</td><td class="p-3">About VS PASE - Company Profile</td><td class="p-3 text-right">4</td></tr>
+                <tr class="border-b border-gray-200"><td class="p-3">5.</td><td class="p-3">Scope of Supply</td><td class="p-3 text-right">5</td></tr>
+                <tr class="border-b border-gray-200 bg-gray-50"><td class="p-3">6.</td><td class="p-3">Technical Specifications</td><td class="p-3 text-right">6-7</td></tr>
+                <tr class="border-b border-gray-200"><td class="p-3">7.</td><td class="p-3">Equipment Data Sheets</td><td class="p-3 text-right">8</td></tr>
+                <tr class="border-b border-gray-200 bg-gray-50"><td class="p-3">8.</td><td class="p-3">Commercial Terms & Conditions</td><td class="p-3 text-right">9</td></tr>
+                <tr class="border-b border-gray-200"><td class="p-3">9.</td><td class="p-3">Price Schedule</td><td class="p-3 text-right">10</td></tr>
+                <tr class="border-b border-gray-200 bg-gray-50"><td class="p-3">10.</td><td class="p-3">Drawings & Documentation</td><td class="p-3 text-right">11</td></tr>
+                <tr class="border-b border-gray-200"><td class="p-3">11.</td><td class="p-3">Client Reference List</td><td class="p-3 text-right">12</td></tr>
+            </tbody>
+        </table>
+        <div class="page-number">Page 3 of 12</div>
+    </div>
+
+    <!-- PAGE 4 - COMPANY PROFILE -->
+    <div class="page">
+        <div class="border-b-2 border-blue-primary pb-3 mb-6 flex justify-between items-center">
+            <div><span class="logo-text text-lg">VS PASE</span></div>
+            <div class="text-right text-xs text-gray-600"><p>Offer No: {{offerNumber}}</p></div>
+        </div>
+        
+        <h2 class="section-title">About VS PASE</h2>
+        
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Company Overview</h3>
+            <p class="text-gray-700 leading-relaxed text-justify text-sm">
+                VS Projects & System Engineers is a leading manufacturer of industrial drying equipment with over 500 installations globally across 35 countries. We are ISO 9001:2008 certified and committed to quality and customer satisfaction.
             </p>
         </div>
         
-        <div class="grid grid-cols-2 gap-8 mb-8">
-            <div class="bg-gray-50 p-6 rounded-lg">
-                <h4 class="font-bold text-blue-primary mb-3">Global Presence</h4>
-                <ul class="text-gray-700 space-y-2">
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-light-blue p-4 rounded">
+                <h4 class="font-bold text-blue-primary mb-3 text-sm">Global Presence</h4>
+                <ul class="text-gray-700 space-y-1 text-xs">
                     <li>• 500+ installations worldwide</li>
                     <li>• Presence in 35 countries</li>
                     <li>• Export to 6 continents</li>
-                    <li>• Regional offices in 8 countries</li>
+                    <li>• 24/7 after-sales support</li>
                 </ul>
             </div>
-            <div class="bg-gray-50 p-6 rounded-lg">
-                <h4 class="font-bold text-blue-primary mb-3">Certifications</h4>
-                <ul class="text-gray-700 space-y-2">
+            <div class="bg-light-blue p-4 rounded">
+                <h4 class="font-bold text-blue-primary mb-3 text-sm">Certifications</h4>
+                <ul class="text-gray-700 space-y-1 text-xs">
                     <li>• ISO 9001:2008 Certified</li>
                     <li>• CE Marking Compliance</li>
                     <li>• ASME Standards</li>
@@ -201,31 +242,302 @@
             </div>
         </div>
         
-        <div class="mb-8">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">Our Expertise</h3>
-            <div class="grid grid-cols-3 gap-4">
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                    <div class="text-3xl font-bold text-blue-primary mb-2">25+</div>
-                    <p class="text-sm text-gray-600">Years Experience</p>
-                </div>
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                    <div class="text-3xl font-bold text-blue-primary mb-2">500+</div>
-                    <p class="text-sm text-gray-600">Global Installations</p>
-                </div>
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                    <div class="text-3xl font-bold text-blue-primary mb-2">35</div>
-                    <p class="text-sm text-gray-600">Countries Served</p>
-                </div>
+        <div class="grid grid-cols-4 gap-3 mb-6">
+            <div class="text-center p-3 bg-blue-50 rounded">
+                <div class="text-2xl font-bold text-blue-primary">25+</div>
+                <p class="text-xs text-gray-600">Years Experience</p>
+            </div>
+            <div class="text-center p-3 bg-blue-50 rounded">
+                <div class="text-2xl font-bold text-blue-primary">500+</div>
+                <p class="text-xs text-gray-600">Global Installations</p>
+            </div>
+            <div class="text-center p-3 bg-blue-50 rounded">
+                <div class="text-2xl font-bold text-blue-primary">35</div>
+                <p class="text-xs text-gray-600">Countries Served</p>
+            </div>
+            <div class="text-center p-3 bg-blue-50 rounded">
+                <div class="text-2xl font-bold text-blue-primary">50+</div>
+                <p class="text-xs text-gray-600">Engineers & Staff</p>
             </div>
         </div>
-        
-        <!-- Facility Images Placeholder -->
-        <div id="facility-images" class="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-            <p class="text-gray-400">Facility Images (Stable Diffusion Generated)</p>
-        </div>
+        <div class="page-number">Page 4 of 12</div>
     </div>
 
-    <!-- Additional pages continue... -->
-    
+    <!-- PAGE 5 - SCOPE OF SUPPLY -->
+    <div class="page">
+        <div class="border-b-2 border-blue-primary pb-3 mb-6 flex justify-between items-center">
+            <div><span class="logo-text text-lg">VS PASE</span></div>
+            <div class="text-right text-xs text-gray-600"><p>Offer No: {{offerNumber}}</p></div>
+        </div>
+        
+        <h2 class="section-title">Scope of Supply</h2>
+        
+        <p class="text-gray-700 mb-4 text-sm">
+            We shall supply the following equipment on turnkey basis, including design, manufacture, inspection, testing, packing, and delivery:
+        </p>
+        
+        <h3 class="font-semibold text-gray-800 mb-3">1. Main Equipment</h3>
+        <table class="w-full mb-6 text-sm">
+            <thead>
+                <tr class="bg-blue-primary text-white">
+                    <th class="p-2 text-left w-16">S.No.</th>
+                    <th class="p-2 text-left">Description</th>
+                    <th class="p-2 text-center w-20">Qty</th>
+                    <th class="p-2 text-center w-20">Unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each equipment}}
+                <tr class="border-b border-gray-200">
+                    <td class="p-2">{{srNo}}</td>
+                    <td class="p-2">
+                        <strong>{{description}}</strong><br>
+                        <span class="text-xs text-gray-600">{{specifications}}</span>
+                    </td>
+                    <td class="p-2 text-center">{{quantity}}</td>
+                    <td class="p-2 text-center">{{unit}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        
+        <h3 class="font-semibold text-gray-800 mb-3">2. Standard Accessories</h3>
+        <ul class="text-sm text-gray-700 space-y-1 mb-6 ml-4">
+            <li>• Inlet & Outlet nozzles with flanges as per ANSI B16.5</li>
+            <li>• Inspection doors and access platforms</li>
+            <li>• Vibration monitoring system</li>
+            <li>• Temperature sensors (RTD/ Thermocouple)</li>
+            <li>• Pressure indicators at critical points</li>
+            <li>• Dust collection system with bag filters</li>
+        </ul>
+        
+        <h3 class="font-semibold text-gray-800 mb-3">3. Documentation</h3>
+        <ul class="text-sm text-gray-700 space-y-1 ml-4">
+            <li>• GA Drawings (2 sets + PDF)</li>
+            <li>• Operation & Maintenance Manual</li>
+            <li>• Quality Assurance Plan (QAP)</li>
+            <li>• Inspection & Test Reports</li>
+            <li>• Material Test Certificates</li>
+        </ul>
+        <div class="page-number">Page 5 of 12</div>
+    </div>
+
+    <!-- PAGE 6 - TECHNICAL SPECIFICATIONS -->
+    <div class="page">
+        <div class="border-b-2 border-blue-primary pb-3 mb-6 flex justify-between items-center">
+            <div><span class="logo-text text-lg">VS PASE</span></div>
+            <div class="text-right text-xs text-gray-600"><p>Offer No: {{offerNumber}}</p></div>
+        </div>
+        
+        <h2 class="section-title">Technical Specifications</h2>
+        
+        {{#each equipment}}
+        <div class="mb-6 border border-gray-200 rounded overflow-hidden">
+            <div class="bg-blue-primary text-white p-3">
+                <h3 class="font-semibold">{{description}}</h3>
+            </div>
+            <table class="w-full text-sm">
+                <tbody>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-2 bg-gray-50 w-1/3 font-medium">Equipment Type</td>
+                        <td class="p-2">{{specifications}}</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-2 bg-gray-50 font-medium">Material of Construction</td>
+                        <td class="p-2">SS304/SS316 as specified</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-2 bg-gray-50 font-medium">Design Temperature</td>
+                        <td class="p-2">Up to 200°C</td>
+                    </tr>
+                    <tr class="border-b border-gray-100">
+                        <td class="p-2 bg-gray-50 font-medium">Design Pressure</td>
+                        <td class="p-2">Atmospheric / Slight Negative</td>
+                    </tr>
+                    <tr>
+                        <td class="p-2 bg-gray-50 font-medium">Surface Finish</td>
+                        <td class="p-2">SS 304: 2B Finish / CS: Epoxy Paint</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {{/each}}
+        <div class="page-number">Page 6 of 12</div>
+    </div>
+
+    <!-- PAGE 7 - COMMERCIAL TERMS -->
+    <div class="page">
+        <div class="border-b-2 border-blue-primary pb-3 mb-6 flex justify-between items-center">
+            <div><span class="logo-text text-lg">VS PASE</span></div>
+            <div class="text-right text-xs text-gray-600"><p>Offer No: {{offerNumber}}</p></div>
+        </div>
+        
+        <h2 class="section-title">Commercial Terms & Conditions</h2>
+        
+        <table class="w-full text-sm mb-6">
+            <tbody>
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 bg-gray-50 w-1/3 font-medium">Price Basis</td>
+                    <td class="p-3">Ex-Works, New Delhi, India</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 bg-gray-50 font-medium">Packing & Forwarding</td>
+                    <td class="p-3">Extra @ 2% of basic price</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 bg-gray-50 font-medium">GST</td>
+                    <td class="p-3">18% extra (IGST/SGST/CGST as applicable)</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 bg-gray-50 font-medium">Freight & Insurance</td>
+                    <td class="p-3">Extra - Actual basis</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 bg-gray-50 font-medium">Delivery</td>
+                    <td class="p-3">8-10 weeks from date of PO</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 bg-gray-50 font-medium">Payment Terms</td>
+                    <td class="p-3">30% advance, 70% against delivery</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 bg-gray-50 font-medium">Validity</td>
+                    <td class="p-3">30 days from date of quotation</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 bg-gray-50 font-medium">Warranty</td>
+                    <td class="p-3">12 months from commissioning</td>
+                </tr>
+                <tr>
+                    <td class="p-3 bg-gray-50 font-medium">Jurisdiction</td>
+                    <td class="p-3">Delhi, India</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="bg-yellow-50 border border-yellow-200 p-4 rounded">
+            <h4 class="font-semibold text-yellow-800 mb-2 text-sm">Important Notes:</h4>
+            <ul class="text-xs text-yellow-700 space-y-1">
+                <li>• Unloading, civil works, and foundation at client scope</li>
+                <li>• Electrical cabling, panel, and connections at client scope</li>
+                <li>• Raw water, steam, and compressed air at client scope</li>
+                <li>• Erection & commissioning supervision will be provided by VS PASE</li>
+            </ul>
+        </div>
+        <div class="page-number">Page 7 of 12</div>
+    </div>
+
+    <!-- PAGE 8 - PRICE SCHEDULE -->
+    <div class="page">
+        <div class="border-b-2 border-blue-primary pb-3 mb-6 flex justify-between items-center">
+            <div><span class="logo-text text-lg">VS PASE</span></div>
+            <div class="text-right text-xs text-gray-600"><p>Offer No: {{offerNumber}}</p></div>
+        </div>
+        
+        <h2 class="section-title">Price Schedule</h2>
+        
+        <p class="text-sm text-gray-600 mb-4">All prices in INR (Indian Rupees)</p>
+        
+        <table class="w-full text-sm mb-6">
+            <thead>
+                <tr class="bg-blue-primary text-white">
+                    <th class="p-3 text-left w-16">S.No.</th>
+                    <th class="p-3 text-left">Description</th>
+                    <th class="p-3 text-right w-32">Qty</th>
+                    <th class="p-3 text-right w-32">Unit Price</th>
+                    <th class="p-3 text-right w-32">Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each equipment}}
+                <tr class="border-b border-gray-200">
+                    <td class="p-3">{{srNo}}</td>
+                    <td class="p-3">{{description}}</td>
+                    <td class="p-3 text-right">{{quantity}} {{unit}}</td>
+                    <td class="p-3 text-right">₹ {{unitPrice}}</td>
+                    <td class="p-3 text-right">₹ {{totalPrice}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfoot class="bg-gray-50 font-semibold">
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 text-right" colspan="4">Sub Total:</td>
+                    <td class="p-3 text-right">₹ {{subTotal}}</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 text-right" colspan="4">Packing & Forwarding (2%):</td>
+                    <td class="p-3 text-right">₹ {{packingForwarding}}</td>
+                </tr>
+                {{#each taxes}}
+                <tr class="border-b border-gray-200">
+                    <td class="p-3 text-right" colspan="4">{{name}}:</td>
+                    <td class="p-3 text-right">₹ {{amount}}</td>
+                </tr>
+                {{/each}}
+                <tr class="bg-blue-primary text-white text-lg">
+                    <td class="p-3 text-right" colspan="4"><strong>Grand Total:</strong></td>
+                    <td class="p-3 text-right"><strong>₹ {{grandTotal}}</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        <div class="bg-gray-50 border border-gray-200 p-4 rounded mt-6">
+            <p class="text-sm"><strong>Amount in Words:</strong> {{totalAmountWords}}</p>
+        </div>
+        
+        <div class="mt-8 text-center">
+            <p class="text-sm text-gray-600 mb-4">For <strong>VS Projects & System Engineers</strong></p>
+            <div class="w-48 h-0.5 bg-gray-300 mx-auto mb-2"></div>
+            <p class="text-xs text-gray-500">Authorized Signatory</p>
+        </div>
+        <div class="page-number">Page 8 of 12</div>
+    </div>
+
+    <!-- PAGE 9 - CLIENT REFERENCES -->
+    <div class="page">
+        <div class="border-b-2 border-blue-primary pb-3 mb-6 flex justify-between items-center">
+            <div><span class="logo-text text-lg">VS PASE</span></div>
+            <div class="text-right text-xs text-gray-600"><p>Offer No: {{offerNumber}}</p></div>
+        </div>
+        
+        <h2 class="section-title">Client Reference List</h2>
+        
+        <table class="w-full text-sm">
+            <thead>
+                <tr class="bg-blue-primary text-white">
+                    <th class="p-2 text-left">S.No.</th>
+                    <th class="p-2 text-left">Client Name</th>
+                    <th class="p-2 text-left">Location</th>
+                    <th class="p-2 text-left">Equipment Supplied</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-b border-gray-200"><td class="p-2">1.</td><td class="p-2">Shree Renuka Sugars Ltd</td><td class="p-2">Karnataka, India</td><td class="p-2">FBD 100 TPD</td></tr>
+                <tr class="border-b border-gray-200 bg-gray-50"><td class="p-2">2.</td><td class="p-2">Balrampur Chini Mills</td><td class="p-2">Uttar Pradesh, India</td><td class="p-2">FBD 75 TPD</td></tr>
+                <tr class="border-b border-gray-200"><td class="p-2">3.</td><td class="p-2">Triveni Engineering</td><td class="p-2">Uttar Pradesh, India</td><td class="p-2">FBD 60 TPD</td></tr>
+                <tr class="border-b border-gray-200 bg-gray-50"><td class="p-2">4.</td><td class="p-2">Dalmia Bharat Sugar</td><td class="p-2">Tamil Nadu, India</td><td class="p-2">Rotary Dryer 50 TPD</td></tr>
+                <tr class="border-b border-gray-200"><td class="p-2">5.</td><td class="p-2">EID Parry (India) Ltd</td><td class="p-2">Tamil Nadu, India</td><td class="p-2">FBD 80 TPD</td></tr>
+                <tr class="border-b border-gray-200 bg-gray-50"><td class="p-2">6.</td><td class="p-2">Bajaj Hindusthan Sugar</td><td class="p-2">Uttar Pradesh, India</td><td class="p-2">FBD 120 TPD</td></tr>
+                <tr class="border-b border-gray-200"><td class="p-2">7.</td><td class="p-2">Dhampur Sugar Mills</td><td class="p-2">Uttar Pradesh, India</td><td class="p-2">FBD 90 TPD</td></tr>
+                <tr class="border-b border-gray-200 bg-gray-50"><td class="p-2">8.</td><td class="p-2">Simbhaoli Sugars Ltd</td><td class="p-2">Uttar Pradesh, India</td><td class="p-2">FBD 65 TPD</td></tr>
+                <tr class="border-b border-gray-200"><td class="p-2">9.</td><td class="p-2">Dwarikesh Sugar Industries</td><td class="p-2">Uttar Pradesh, India</td><td class="p-2">FBD 100 TPD</td></tr>
+                <tr class="bg-gray-50"><td class="p-2">10.</td><td class="p-2">Ugar Sugar Works Ltd</td><td class="p-2">Karnataka, India</td><td class="p-2">FBD 55 TPD</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="mt-8 text-center text-sm text-gray-600">
+            <p>And many more satisfied clients across India and abroad...</p>
+            <p class="mt-4">For detailed reference list, please contact our marketing department.</p>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t-2 border-blue-primary text-center">
+            <p class="text-lg font-bold text-blue-primary">VS PROJECTS & SYSTEM ENGINEERS</p>
+            <p class="text-sm text-gray-600">A-62, Flatted Factory Complex, Okhla Phase-III, New Delhi - 110020</p>
+            <p class="text-sm text-gray-600">Tel: +91-11-26944429, 26944742 | Email: info@vspase.com</p>
+            <p class="text-xs text-gray-500 mt-2">ISO 9001:2008 Certified Company</p>
+        </div>
+        <div class="page-number">Page 9 of 9</div>
+    </div>
+
 </body>
 </html>

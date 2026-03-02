@@ -50,19 +50,27 @@ export const TechnicalSpecsStep: React.FC = () => {
 
   const handleAddEquipment = () => {
     addEquipment({
+      equipmentType: 'PUMP' as any,
+      tagNumber: '',
+      description: '',
       type: '',
       model: '',
       capacity: '',
-      moc: '',
-      motorHP: { totalHP: '' },
+      moc: 'SS304' as any,
+      casingMoc: 'SS304' as any,
+      impellerMoc: 'SS304' as any,
+      shaftMoc: 'SS316' as any,
+      sealType: 'mechanical',
+      motorHP: 0,
       quantity: 1,
-      description: '',
     });
   };
 
   const handleUpdateEquipmentField = (index: number, field: string, value: any) => {
     const equipment = techSpecs.equipment[index];
-    updateEquipment(index, { ...equipment, [field]: value });
+    if (equipment) {
+      updateEquipment(equipment.id, { [field]: value });
+    }
   };
 
   const handleAddScopeItem = () => {
@@ -119,7 +127,7 @@ export const TechnicalSpecsStep: React.FC = () => {
                 <div className="flex justify-between items-start mb-3">
                   <h4 className="font-medium text-gray-900">Equipment {index + 1}</h4>
                   <button
-                    onClick={() => removeEquipment(index)}
+                    onClick={() => removeEquipment(eq.id)}
                     className="text-red-500 hover:text-red-700 text-sm"
                   >
                     Remove
@@ -129,7 +137,7 @@ export const TechnicalSpecsStep: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <Select
                     label="Equipment Type *"
-                    value={eq.type}
+                    value={eq.type || ''}
                     onChange={(e) => handleUpdateEquipmentField(index, 'type', e.target.value)}
                     options={EQUIPMENT_TYPES}
                     required
@@ -151,16 +159,17 @@ export const TechnicalSpecsStep: React.FC = () => {
 
                   <Select
                     label="Material of Construction (MOC)"
-                    value={eq.moc}
+                    value={eq.moc || ''}
                     onChange={(e) => handleUpdateEquipmentField(index, 'moc', e.target.value)}
                     options={MOC_OPTIONS}
                   />
 
                   <Input
                     label="Motor HP"
-                    value={eq.motorHP?.totalHP || ''}
+                    type="number"
+                    value={eq.motorHP || ''}
                     onChange={(e) =>
-                      handleUpdateEquipmentField(index, 'motorHP', { totalHP: e.target.value })
+                      handleUpdateEquipmentField(index, 'motorHP', parseInt(e.target.value) || 0)
                     }
                     placeholder="e.g., 125 HP"
                   />

@@ -15,7 +15,7 @@
     "express": "^4.18.2",
     "handlebars": "^4.7.8",
     "localforage": "^1.10.0",
-    "puppeteer": "^21.6.1",
+    "puppeteer": "^24.37.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "zustand": "^4.4.7"

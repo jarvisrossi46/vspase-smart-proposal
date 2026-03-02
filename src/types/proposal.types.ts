@@ -80,11 +80,22 @@ export interface ClientSite {
   };
 }
 
+export interface ClientAddress {
+  line1: string;
+  line2?: string;
+  city: string;
+  state: string;
+  pincode: string;
+  country: string;
+}
+
 export interface ClientDetails {
   clientName: string;
   clientCode?: string;
+  projectName?: string;
   industry: string;
   segment: string;
+  clientAddress?: ClientAddress;
   sites: ClientSite[];
   contacts: ClientContact[];
   selectedSiteId: string | null;
